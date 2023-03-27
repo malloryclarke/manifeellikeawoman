@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>partyfor2(5thousand)</title>
+    <link rel="icon" href="noun-cowgirl-5367566.ico">
+  </head>
+  <body>
+    <h1>shania twain</h1>
+    duh-duh-duh-durrrr-duh-duh-da! let's go girls!
+    <h2>when</h2>
+    <p id="countdown">june 12, 2023 7:30</p>
+    <h2>location</h2>
+    <a href="https://goo.gl/maps/QndsGDoKPhNZdUdP7">scotiabank centre, halifax</a>
+    <h2>let's go girls</h2>
+    <a href="https://youtu.be/ZJL4UGSbeFg">prerogative to have a little fun</a>
+    <h2></h2>
+    <img src="denimondenim.gif">
+    <h2>theme</h2>
+    <ul>
+        <li>leopard print</li>
+        <li>mens' shirts</li>
+        <li>short skirts</li>
+        <li>double denim</li>
+    </ul>
+    
+  </body>
+
+  <script>
+    // Set the date we're counting down to
+    var countdown = document.getElementById("countdown")
+    var originalDate = countdown.innerText
+    var countDownDate = new Date(originalDate);
+    var countDownTimestamp = countDownDate.getTime();
+  
+    var nowDate = new Date(countDownTimestamp + 3 * 60 * 60 * 1000);
+    var nowTimestamp = nowDate.getTime();
+  
+    // Update the count down every animation frame
+    function updateCountdown() {
+      // Get today's date and time
+      var now = new Date().getTime();
+  
+      // Find the distance between now and the count down date
+      var distance = countDownTimestamp - now;
+  
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+      // Output the result in an element with id="countdown"
+      if (now < countDownTimestamp) {
+        // Countdown is not finished
+        countdown.innerText = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s " + "(" + originalDate + ")";
+      } else if (now < nowTimestamp) {
+        // Countdown is finished, display "Now!!!" for 3 hours
+        countdown.innerText = "now!";
+      } else {
+        // Countdown is over, display "it's over :("
+        countdown.innerText = "it's over :(";
+        return;
+      }
+  
+      requestAnimationFrame(updateCountdown);
+    }
+  
+    requestAnimationFrame(updateCountdown);
+  </script>
+  
+  
+  <style>
+    html {
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+    body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+    }
+
+    ol, ul {
+        list-style: none;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: #333;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+
+    img {
+        max-width: 20rem;
+        height: auto;
+    }
+
+    body {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    td, th {
+        border: 1px solid #ddd;
+    }
+    img {
+        border-radius: 1rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 1rem 0;
+    }
+
+    p {
+        margin: 0.5rem 0;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.5;
+        color: #333;
+    }
+    @media (prefers-color-scheme: dark) {
+        /* Dark mode styles go here */
+        body {
+            background-color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #ddd;
+        }
+        body, p, input {
+            color: #ddd;
+        }
+        a {
+            color: #87ceeb;
+        }
+        td, th {
+            border-color: #ddd;
+        }
+        img {
+            opacity: 0.7;
+            transition: opacity 0.5s;
+        }
+
+        img:hover {
+            opacity: 1.0;
+        }
+    }
+  </style>
+  
+</html>
